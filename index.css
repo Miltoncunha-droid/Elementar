@@ -1,0 +1,225 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Experiência Elementar Custom Colors */
+  --color-elementar-cream: #FBF9F6;
+  --color-elementar-dark: #1A1A1A;
+  --color-elementar-gold: #C5A880;
+  --color-elementar-terra: #8C6239;
+  
+  --primary: #8C6239;
+  --primary-foreground: #FBF9F6;
+  --sidebar-primary: #8C6239;
+  --sidebar-primary-foreground: #FBF9F6;
+  --chart-1: #C5A880;
+  --chart-2: #8C6239;
+  --chart-3: #6B4423;
+  --chart-4: #4A2F1A;
+  --chart-5: #2F1F0F;
+  --radius: 0.65rem;
+  --background: #FBF9F6;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  --secondary: #E8E4DF;
+  --secondary-foreground: #1A1A1A;
+  --muted: #D9D3CC;
+  --muted-foreground: #6B6B6B;
+  --accent: #C5A880;
+  --accent-foreground: #1A1A1A;
+  --destructive: #DC2626;
+  --destructive-foreground: #FBF9F6;
+  --border: #E8E4DF;
+  --input: #E8E4DF;
+  --ring: #8C6239;
+  --sidebar: #FBF9F6;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-accent: #C5A880;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #E8E4DF;
+  --sidebar-ring: #8C6239;
+}
+
+.dark {
+  --primary: #C5A880;
+  --primary-foreground: #1A1A1A;
+  --sidebar-primary: #C5A880;
+  --sidebar-primary-foreground: #1A1A1A;
+  --background: #1A1A1A;
+  --foreground: #FBF9F6;
+  --card: #2A2A2A;
+  --card-foreground: #FBF9F6;
+  --popover: #2A2A2A;
+  --popover-foreground: #FBF9F6;
+  --secondary: #3A3A3A;
+  --secondary-foreground: #D9D3CC;
+  --muted: #4A4A4A;
+  --muted-foreground: #B0ADA8;
+  --accent: #C5A880;
+  --accent-foreground: #1A1A1A;
+  --destructive: #EF4444;
+  --destructive-foreground: #1A1A1A;
+  --border: #3A3A3A;
+  --input: #3A3A3A;
+  --ring: #C5A880;
+  --chart-1: #C5A880;
+  --chart-2: #8C6239;
+  --chart-3: #6B4423;
+  --chart-4: #4A2F1A;
+  --chart-5: #2F1F0F;
+  --sidebar: #2A2A2A;
+  --sidebar-foreground: #FBF9F6;
+  --sidebar-accent: #C5A880;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #3A3A3A;
+  --sidebar-ring: #C5A880;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* Typography System */
+  .font-serif-display {
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight;
+  }
+
+  .font-serif-heading {
+    @apply font-serif text-2xl md:text-3xl font-normal tracking-tight;
+  }
+
+  .font-serif-subheading {
+    @apply font-serif text-xl md:text-2xl font-normal;
+  }
+
+  .font-sans-body {
+    @apply font-sans text-base md:text-lg leading-relaxed;
+  }
+
+  .font-sans-small {
+    @apply font-sans text-sm leading-relaxed;
+  }
+
+  /* Divider Line */
+  .divider-gold {
+    @apply h-px bg-gradient-to-r from-transparent via-[#C5A880] to-transparent;
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply px-8 py-4 bg-[#8C6239] text-[#FBF9F6] font-sans font-semibold rounded-full hover:bg-[#6B4423] transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 border-2 border-[#8C6239] text-[#8C6239] font-sans font-semibold rounded-full hover:bg-[#8C6239] hover:text-[#FBF9F6] transition-all duration-300;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .section-padding-sm {
+    @apply py-8 md:py-12 lg:py-16;
+  }
+}
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', serif;
+}
