@@ -140,6 +140,45 @@
       width: 28px; height: 1px;
       background: var(--terra);
     }
+    .hero-event-name {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 14px 28px;
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      position: relative;
+      background: rgba(197,168,128,.06);
+    }
+    .hero-event-name::before,
+    .hero-event-name::after {
+      content: '✦';
+      position: absolute;
+      color: var(--gold);
+      font-size: 10px;
+    }
+    .hero-event-name::before { top: -7px; left: 50%; transform: translateX(-50%); background: var(--cream); padding: 0 8px; }
+    .hero-event-name::after  { bottom: -7px; left: 50%; transform: translateX(-50%); background: var(--cream); padding: 0 8px; }
+    .hero-event-name .event-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(11px, 1.2vw, 13px);
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .hero-event-name .event-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 2.8vw, 36px);
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--dark);
+      line-height: 1.1;
+    }
+    .hero-event-name .event-line { display: none; }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(40px, 4.5vw, 60px);
@@ -181,22 +220,24 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--terra);
-      color: var(--white);
+      background: linear-gradient(135deg, #C9A96E 0%, #E2C98A 45%, #C5A265 100%);
+      color: #2C2513;
       padding: 15px 34px;
       border-radius: 100px;
       font-weight: 600;
       font-size: 15px;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       border: none;
       cursor: pointer;
-      transition: all .25s;
+      transition: all .3s;
       text-decoration: none;
+      box-shadow: 0 4px 18px rgba(197,162,101,.35), inset 0 1px 0 rgba(255,255,255,.25);
     }
     .btn-primary:hover {
-      background: var(--terra-deep);
+      background: linear-gradient(135deg, #B8943D 0%, #D4B870 45%, #B8943D 100%);
       transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(140,98,57,.28);
+      box-shadow: 0 10px 32px rgba(197,162,101,.5), inset 0 1px 0 rgba(255,255,255,.2);
     }
     .btn-outline {
       display: inline-flex;
@@ -627,10 +668,30 @@
       display: block;
       text-decoration: none;
     }
-    .btn-preco-primary { background: var(--terra); color: var(--white); }
-    .btn-preco-primary:hover { background: var(--terra-deep); }
-    .btn-preco-outline { background: transparent; color: var(--terra); border: 1.5px solid var(--terra); }
-    .btn-preco-outline:hover { background: var(--terra); color: var(--white); }
+    .btn-preco-primary {
+      background: linear-gradient(135deg, #C9A96E 0%, #E2C98A 45%, #C5A265 100%);
+      color: #2C2513;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 16px rgba(197,162,101,.35), inset 0 1px 0 rgba(255,255,255,.25);
+    }
+    .btn-preco-primary:hover {
+      background: linear-gradient(135deg, #B8943D 0%, #D4B870 45%, #B8943D 100%);
+      box-shadow: 0 8px 24px rgba(197,162,101,.5);
+      transform: translateY(-1px);
+    }
+    .btn-preco-outline {
+      background: transparent;
+      color: var(--terra);
+      border: 1.5px solid var(--gold);
+      letter-spacing: .04em;
+    }
+    .btn-preco-outline:hover {
+      background: linear-gradient(135deg, #C9A96E 0%, #E2C98A 45%, #C5A265 100%);
+      color: #2C2513;
+      border-color: transparent;
+      box-shadow: 0 6px 20px rgba(197,162,101,.4);
+    }
     .preco-vagas {
       text-align: center;
       font-size: 11px;
@@ -716,17 +777,19 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--white);
-      color: var(--terra-deep);
+      background: linear-gradient(135deg, #C9A96E 0%, #E2C98A 45%, #C5A265 100%);
+      color: #2C2513;
       padding: 16px 40px;
       border-radius: 100px;
       font-weight: 700;
       font-size: 15px;
-      letter-spacing: .03em;
+      letter-spacing: .06em;
+      text-transform: uppercase;
       transition: all .25s;
       text-decoration: none;
+      box-shadow: 0 6px 24px rgba(197,162,101,.45), inset 0 1px 0 rgba(255,255,255,.25);
     }
-    .btn-cta-final:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,.2); }
+    .btn-cta-final:hover { background: linear-gradient(135deg, #B8943D 0%, #D4B870 45%, #B8943D 100%); transform: translateY(-3px); box-shadow: 0 14px 40px rgba(197,162,101,.55); }
     .cta-urgencia {
       margin-top: 24px;
       font-size: 12px;
@@ -798,20 +861,22 @@
       position: fixed;
       bottom: 28px; right: 28px;
       z-index: 999;
-      background: var(--terra);
-      color: var(--white);
+      background: linear-gradient(135deg, #C9A96E 0%, #E2C98A 45%, #C5A265 100%);
+      color: #2C2513;
       padding: 14px 26px;
       border-radius: 100px;
       font-weight: 600;
       font-size: 13px;
-      box-shadow: 0 8px 28px rgba(140,98,57,.45);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      box-shadow: 0 6px 24px rgba(197,162,101,.5), inset 0 1px 0 rgba(255,255,255,.25);
       transition: all .25s;
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .floating-cta:hover { background: var(--terra-deep); transform: translateY(-3px); box-shadow: 0 12px 36px rgba(140,98,57,.55); }
+    .floating-cta:hover { background: linear-gradient(135deg, #B8943D 0%, #D4B870 45%, #B8943D 100%); transform: translateY(-3px); box-shadow: 0 12px 36px rgba(197,162,101,.6); }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
@@ -843,29 +908,19 @@
 
 <!-- ANNOUNCE BAR -->
 <div class="announce">
-  ✦ &nbsp;<strong>25 DE JULHO · ROOFTOP 27 · HOTEL INTERCITY SALVADOR</strong>&nbsp; · Apenas 50 vagas ✦
+  ✦ &nbsp;<strong>25 DE JULHO · ROOFTOP 27 · HOTEL INTERCITY SALVADOR</strong>&nbsp; ✦
 </div>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">Bia <span>na Trilha</span></div>
-    <div class="nav-right">
-      <div class="nav-links">
-        <a href="#sobre-evento">O Evento</a>
-        <a href="#programa">Programação</a>
-        <a href="#sobre-bia">Sobre Bia</a>
-        <a href="#precos">Ingressos</a>
-      </div>
-      <a href="#precos" class="nav-cta">Garantir Vaga</a>
-    </div>
-  </div>
-</nav>
+
 
 <!-- HERO -->
 <section class="hero" style="padding:0; background:var(--cream);">
   <div class="hero-content">
     <div class="hero-eyebrow">Evento Presencial · Salvador, BA</div>
+    <div class="hero-event-name">
+      <span class="event-title">Experiência Elementar</span>
+      <span class="event-sub">Imersão Presencial</span>
+    </div>
     <h1>Onde os Negócios encontram a <em>Espiritualidade</em></h1>
     <p class="hero-sub">Uma imersão de um dia inteiro para mulheres empreendedoras reconectarem corpo, alma e estratégia — e criarem o próximo nível dos seus negócios.</p>
     <div class="hero-pills">
@@ -1280,6 +1335,8 @@
     </div>
   </div>
 </footer>
+
+
 
 <!-- FLOATING CTA -->
 <a href="#precos" class="floating-cta">Garantir vaga →</a>
