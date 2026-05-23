@@ -816,9 +816,9 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-content { padding: 60px 24px 40px; }
-      .hero-image { height: 380px; }
-      .hero-image::after { background: linear-gradient(180deg, var(--cream) 0%, rgba(247,244,239,.2) 50%, transparent 100%); }
+      .hero-image { height: 380px; order: -1; }
+      .hero-content { padding: 40px 24px 40px; }
+      .hero-image::after { background: linear-gradient(180deg, transparent 50%, var(--cream) 100%); }
       .dor-inner { grid-template-columns: 1fr; gap: 40px; }
       .timeline-cols { grid-template-columns: 1fr; }
       .sobre-grid { grid-template-columns: 1fr; }
@@ -881,7 +881,7 @@
   </div>
   <div class="hero-image">
     <video autoplay muted loop playsinline poster="" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;">
-      <source src="https://res.cloudinary.com/dbzqk5wif/video/upload/33f81173-b36c-4afa-808e-7a5413ad3feb_iqr1ey.mp4" type="video/mp4">
+      <source src="https://res.cloudinary.com/dbzqk5wif/video/upload/c261d919-60e8-4221-aa67-c9573f21f797_ncpi06.mp4" type="video/mp4">
     </video>
   </div>
 </section>
