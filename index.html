@@ -882,7 +882,7 @@
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-image { height: 480px; order: -1; }
-      .hero-content { padding: 16px 24px 40px; }
+      .hero-content { padding: 0px 24px 40px; margin-top: -60px; position: relative; z-index: 3; }
       .hero-image::after { background: linear-gradient(180deg, transparent 40%, rgba(247,244,239,.6) 65%, var(--cream) 100%); }
       .dor-inner { grid-template-columns: 1fr; gap: 40px; }
       .timeline-cols { grid-template-columns: 1fr; }
@@ -897,7 +897,7 @@
     }
     @media (max-width: 600px) {
       section { padding: 64px 20px; }
-      .hero-content { padding: 48px 20px 36px; }
+      .hero-content { padding: 0px 20px 36px; margin-top: -60px; }
       .footer-top { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; text-align: center; }
       .floating-cta { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 12px; }
